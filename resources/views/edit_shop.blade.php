@@ -29,4 +29,5 @@
 @stop
 @section('sidebar')
     <b>SIDEBAR!!!</b>
+    <p>TEST</p>
 @stop
