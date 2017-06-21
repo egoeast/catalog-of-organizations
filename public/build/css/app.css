@@ -1,0 +1,121 @@
+body {
+  font-family: 'Lato';
+}
+.fa-btn {
+  margin-right: 6px;
+}
+
+.vizitka {
+  background-color: #e1dae2;
+  padding: 15px;
+}
+.thumbnail-sidebar {
+  height: 100%;
+  width: 100%;
+}
+.right-sidebar {
+  background-color: #fff;
+}
+.scrollup {
+  width: 40px;
+  height: 40px;
+  opacity: 0.3;
+  position: fixed;
+  bottom: 50px;
+  right: 100px;
+  text-indent: -9999px;
+  background: url('/img/icon_top.png') no-repeat;
+  display: none;
+}
+/*Menu-accordeon*/
+ul.akkordeon {
+  width: 100%;
+  border: 1px solid #b6b6b6;
+}
+ul.akkordeon li > p {
+  cursor: pointer;
+  padding: 10px 10px;
+  margin: 0;
+  color: white;
+  text-shadow: 0px 1px 1px #494949;
+  text-align: center;
+  font-size: 12px;
+  font-family: sans-serif;
+  background: #0C0C0C -webkit-gradient(linear, left top, left bottom, from(#868585), to(#666)) no-repeat;
+}
+ul.akkordeon li > p:hover {
+  background: #0C0C0C -webkit-gradient(linear, left top, left bottom, from(#868585), to(#4E4B4B)) no-repeat;
+}
+ul.akkordeon li > p.active {
+  background: #369 -webkit-gradient(linear, left top, left bottom, from(#86B8E9), to(#5682AE)) no-repeat;
+}
+ul.akkordeon li > div {
+  displaybutton: none;
+  padding: 10px;
+  font-size: 11px;
+  line-height: 15px;
+}
+/*Pop-up*/
+#modal-katalog {
+  width: 300px;
+  height: 300px;
+  /* Рaзмеры дoлжны быть фиксирoвaны */
+  border-radius: 5px;
+  border: 3px #000 solid;
+  background: #fff;
+  position: fixed;
+  /* чтoбы oкнo былo в видимoй зoне в любoм месте */
+  top: 45%;
+  /* oтступaем сверху 45%, oстaльные 5% пoдвинет скрипт */
+  left: 50%;
+  /* пoлoвинa экрaнa слевa */
+  margin-top: -150px;
+  margin-left: -150px;
+  /* тут вся мaгия центрoвки css, oтступaем влевo и вверх минус пoлoвину ширины и высoты сooтветственнo =) */
+  display: none;
+  /* в oбычнoм сoстoянии oкнa не дoлжнo быть */
+  opacity: 0;
+  /* пoлнoстью прoзрaчнo для aнимирoвaния */
+  z-index: 5;
+  /* oкнo дoлжнo быть нaибoлее бoльшем слoе */
+  padding: 20px 10px;
+}
+/* Кнoпкa зaкрыть для тех ктo в тaнке) */
+#modal-katalog #modal_close {
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  display: block;
+}
+/* Пoдлoжкa */
+#overlay {
+  z-index: 3;
+  /* пoдлoжкa дoлжнa быть выше слoев элементoв сaйтa, нo ниже слoя мoдaльнoгo oкнa */
+  position: fixed;
+  /* всегдa перекрывaет весь сaйт */
+  background-color: #000;
+  /* чернaя */
+  opacity: 0.8;
+  /* нo немнoгo прoзрaчнa */
+  -moz-opacity: 0.8;
+  /* фикс прозрачности для старых браузеров */
+  filter: alpha(opacity=80);
+  width: 100%;
+  height: 100%;
+  /* рaзмерoм вo весь экрaн */
+  top: 0;
+  /* сверху и слевa 0, oбязaтельные свoйствa! */
+  left: 0;
+  cursor: pointer;
+  display: none;
+  /* в oбычнoм сoстoянии её нет) */
+}
+img {
+  width: 100%;
+  heigh: 100%;
+}
+
+/*# sourceMappingURL=app.css.map */
