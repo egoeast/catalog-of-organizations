@@ -3,9 +3,11 @@
     <h3>Рубрики</h3>
     <ul>
     @foreach($terms as $term)
-        <li>
-            <a href="{{ url('/category/'.$term->slug) }}">{{$term->name}}</a>
-        </li>
+        @if(!$term->parent)
+            <li>
+                <a href="{{ url('/category/'.$term->slug) }}">{{$term->name}}</a>
+            </li>
+        @endif
     @endforeach
     </ul>
 @stop

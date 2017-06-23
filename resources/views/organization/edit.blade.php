@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    {!! Form::model($shop, ['method'=>'PATCH','url'=>'/shops/'.$shop->id]) !!}
+    {!! Form::model($shop, ['method'=>'PATCH','url'=>'/org-update/'.$shop->id]) !!}
     <div class="form-group">
         {!! Form::label('name','Name') !!}
         {!! Form::text('name', null, ['class' => 'form-control']) !!}
@@ -20,7 +20,6 @@
         {!! Form::label('description','Description') !!}
         {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
     </div>
-
 
     <div class="form-group">
         {!! Form::submit('Edit', ['class' => 'btn btn-primary form-control']) !!}

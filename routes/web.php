@@ -26,6 +26,11 @@ Route::get('/edit/{id}','KatalogController@edit');
 Route::get('/show_landing/{id}','KatalogController@show_landing');
 
 Route::get('/shop_list','KatalogController@shop_list');
+
+Route::patch('/org-update/{id}', 'KatalogController@updateOrg');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/shop-update/{id}', 'KatalogController@update');

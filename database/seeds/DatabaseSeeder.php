@@ -75,6 +75,20 @@ class DatabaseSeeder extends Seeder
             'term_group' => 0,
         ]);
 
+        DB::table('terms')->insert([
+            'id'=>4,
+            'name' => 'Обои',
+            'slug' => 'oboi',
+            'term_group' => 0,
+        ]);
+
+        DB::table('terms')->insert([
+            'id'=>5,
+            'name' => 'Плитки',
+            'slug' => 'plitka',
+            'term_group' => 0,
+        ]);
+
         DB::table('taxonomies')->insert([
             'term_id'=>1,
             'taxonomy'=>'category',
@@ -96,6 +110,22 @@ class DatabaseSeeder extends Seeder
             'taxonomy'=>'category',
             'description'=>'Рубрика организаций',
             'parent' => 0,
+            'count' => 0,
+        ]);
+
+        DB::table('taxonomies')->insert([
+            'term_id'=>4,
+            'taxonomy'=>'category',
+            'description'=>'Рубрика магазинов обоев',
+            'parent' => 1,
+            'count' => 0,
+        ]);
+
+        DB::table('taxonomies')->insert([
+            'term_id'=>5,
+            'taxonomy'=>'category',
+            'description'=>'Рубрика магазинов плитки',
+            'parent' => 1,
             'count' => 0,
         ]);
 

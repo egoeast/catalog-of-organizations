@@ -49,7 +49,7 @@ class KatalogController extends Controller
     public function edit($id)
     {
         $shop = Shop::findOrFail($id);
-        return view('edit_shop')->with('shop', $shop);
+        return view('edit_org')->with('shop', $shop);
     }
 
 
@@ -65,7 +65,12 @@ class KatalogController extends Controller
             ['id', '!=', 0],
         ])->get();
 
-        return view('shops.shop_list')->with('shops', $shops);
+        return view('shops.org_list')->with('shops', $shops);
+    }
+
+    public function updateOrg($id,Request $request)
+    {
+        return $id;
     }
 
     public function category($slug)
@@ -79,7 +84,7 @@ class KatalogController extends Controller
         $shops = Taxonomy::find($category->id)->shops()->get();
         //$shop = Shop::find(1);
         //dd($shops);
-        return view('shops.category',compact('term', 'category','shops'));
+        return view('organizations.category',compact('term', 'category','shops'));
     }
     public function test()
     {
