@@ -16,6 +16,7 @@ class CreateTaxonomyTable extends Migration
         Schema::create('taxonomies', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('term');
+            $table->string('slug',200);
             $table->string('taxonomy',200);
             $table->text('description');
             $table->bigInteger('parent');
