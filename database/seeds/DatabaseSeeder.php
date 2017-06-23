@@ -90,7 +90,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('taxonomies')->insert([
-            'term_id'=>1,
+            'term' => 'Магазины',
+            'slug' => 'magaz',
             'taxonomy'=>'category',
             'description'=>'Рубрика магазинов',
             'parent' => 0,
@@ -98,7 +99,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('taxonomies')->insert([
-            'term_id'=>2,
+            'term' => 'Компании',
+            'slug' => 'company',
             'taxonomy'=>'category',
             'description'=>'Рубрика компаний',
             'parent' => 0,
@@ -106,7 +108,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('taxonomies')->insert([
-            'term_id'=>3,
+            'term' => 'Организации',
+            'slug' => 'org',
             'taxonomy'=>'category',
             'description'=>'Рубрика организаций',
             'parent' => 0,
@@ -114,7 +117,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('taxonomies')->insert([
-            'term_id'=>4,
+            'term' => 'Обои',
+            'slug' => 'oboi',
             'taxonomy'=>'category',
             'description'=>'Рубрика магазинов обоев',
             'parent' => 1,
@@ -122,7 +126,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('taxonomies')->insert([
-            'term_id'=>5,
+            'term' => 'Плитки',
+            'slug' => 'plitka',
             'taxonomy'=>'category',
             'description'=>'Рубрика магазинов плитки',
             'parent' => 1,
