@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTaxonomyShopTable extends Migration
+class CreateTaxonomyOrganizationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateTaxonomyShopTable extends Migration
      */
     public function up()
     {
-        Schema::create('taxonomy_shop', function (Blueprint $table) {
-            $table->bigInteger('shop_id');
+        Schema::create('taxonomy_organization', function (Blueprint $table) {
+            $table->bigInteger('organization_id');
             $table->bigInteger('taxonomy_id');
             $table->bigInteger('term_order');
             $table->rememberToken();
@@ -29,6 +29,6 @@ class CreateTaxonomyShopTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('taxonomy_shop');
+        Schema::dropIfExists('taxonomy_organization');
     }
 }

@@ -8,7 +8,8 @@ class Taxonomy extends Model
 {
     protected $primaryKey = 'id';
     protected $fillable = [
-        'term_id',
+        'term',
+        'slug',
         'taxonomy',
         'description',
         'parrent',

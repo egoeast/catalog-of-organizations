@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('123456'),
         ]);
 
-        DB::table('shops')->insert([
+        DB::table('organizations')->insert([
             'name' => 'Магазин Альтагамма',
             'img'=>'/img/Salon-magazin-Berlin-v-Grodno-foto.jpg',
             'adress' => 'Республика Беларусь, г. Гродно, ул. Свердлова, 17',
@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
 Подробную информацию о реализуемой магазинами «Альтагамма» плитке с фото, размерами и ценами Вы найдёте в каталоге официального сайта торговой компании (см. раздел «Контакты»).'
         ]);
 
-        DB::table('shops')->insert([
+        DB::table('organizations')->insert([
             'name' => 'ТЦ Гемма в Гродно',
             'img'=>'/img/Logotip-magazina-Gemma-v-Grodno.jpg',
             'adress' => 'Гродно, проспект Космонавтов, 2Г.',
@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
 В магазине действуют дисконтные программы, здесь также размещён филиал «Приорбанка», в котором можно оформить кредит на покупку товаров.'
         ]);
 
-        DB::table('shops')->insert([
+        DB::table('organizations')->insert([
             'name' => 'Торговый дом «Керамин-Запад»',
             'img'=>'/img/Logotip-magazina-Keramin.jpg',
             'adress' => 'Республика Беларусь 230025 г. Гродно, ул. Мостовая д. 39',
@@ -134,25 +134,25 @@ class DatabaseSeeder extends Seeder
             'count' => 0,
         ]);
 
-        DB::table('taxonomy_shop')->insert([
-            'shop_id'=>1,
+        DB::table('taxonomy_organization')->insert([
+            'organization_id'=>1,
             'taxonomy_id'=>1,
             'term_order'=>0
         ]);
 
-        DB::table('taxonomy_shop')->insert([
-            'shop_id'=>2,
+        DB::table('taxonomy_organization')->insert([
+            'organization_id'=>2,
             'taxonomy_id'=>1,
             'term_order'=>0
         ]);
 
-        DB::table('taxonomy_shop')->insert([
-            'shop_id'=>3,
+        DB::table('taxonomy_organization')->insert([
+            'organization_id'=>3,
             'taxonomy_id'=>2,
             'term_order'=>0
         ]);
-        DB::table('taxonomy_shop')->insert([
-            'shop_id'=>2,
+        DB::table('taxonomy_organization')->insert([
+            'organization_id'=>2,
             'taxonomy_id'=>2,
             'term_order'=>0
         ]);

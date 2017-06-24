@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Organization;
 use App\Shop;
 use App\Term;
 use App\Taxonomy;
@@ -34,38 +35,32 @@ class KatalogController extends Controller
 
     public function show()
     {
-        $shops = Shop::where([
-            ['id', '!=', 0],
+        $organizations = Organization::all();
+        $terms = Taxonomy::where([
+            ['taxonomy', '=', 'category'],
         ])->get();
-
-        $terms = Term::where([
-            ['id', '!=', 0],
-        ])->get();
-
-        return view('katalog', compact('shops', 'terms'));
+        return view('katalog', compact('organizations', 'terms'));
     }
 
 
     public function edit($id)
     {
-        $shop = Shop::findOrFail($id);
-        return view('edit_org')->with('shop', $shop);
+        $organization = Shop::findOrFail($id);
+        return view('edit')->with('organization', $organization);
     }
 
 
-    public function show_landing($id)
+    public function landing($id)
     {
-        $shop = Shop::findOrFail($id);
-        return view('shops.show_landing')->with('shop', $shop);
+        $organization = Organization::findOrFail($id);
+        return view('shops.show_landing')->with('organization', $organization);
     }
 
-    public function shop_list()
+    public function orgList()
     {
-        $shops = Shop::where([
-            ['id', '!=', 0],
-        ])->get();
+        $organizations = Organization::all();
 
-        return view('shops.org_list')->with('shops', $shops);
+        return view('admin.org-list')->with('organizations', $organizations);
     }
 
     public function updateOrg($id,Request $request)
