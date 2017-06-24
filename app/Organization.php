@@ -13,7 +13,7 @@ class Organization extends Model
         'adress',
         'phone'
     ];
-
+//
 
     public function taxonomies()
     {
