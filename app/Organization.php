@@ -14,7 +14,7 @@ class Organization extends Model
         'phone'
     ];
 
-    //dfsdf
+
     public function taxonomies()
     {
         return $this->belongsToMany('App\Taxonomy', 'taxonomy_organization');
