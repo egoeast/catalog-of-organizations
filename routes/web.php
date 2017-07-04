@@ -23,7 +23,7 @@ Route::get('/category/{id}','KatalogController@category');
 
 Route::get('/edit/{id}','KatalogController@edit');
 
-Route::get('/show_landing/{id}','KatalogController@show_landing');
+Route::get('/card/{slug}','KatalogController@showCard');
 
 Route::get('/shop_list','KatalogController@shop_list');
 

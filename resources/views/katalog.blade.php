@@ -24,7 +24,7 @@
                 <img src="{{$org->img}}">
             </div>
             <div class="col-md-6">
-                <a href="{{ url('/show_landing/'.$org->id) }}"><h2>{{$org->name}}</h2></a>
+                <a href="{{ url('/card/'.$org->slug) }}"><h2>{{$org->name}}</h2></a>
                 <a class="btn btn-primary btn-block" href="{{ url('/show_landing/'.$org->id) }}">{{$org->name}}</a>
                 <br>
                 <a class="btn btn-danger btn-block">{{$org->adress}}</a>

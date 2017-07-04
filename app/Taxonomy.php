@@ -20,8 +20,8 @@ class Taxonomy extends Model
         return $this->belongsTo('App\Term');
     }
 
-    public function shops()
+    public function organizations()
     {
-        return $this->belongsToMany('App\Shop','taxonomy_shop');
+        return $this->belongsToMany('App\Organization','taxonomy_organization');
     }
 }

@@ -16,6 +16,7 @@ class CreateOrganizationsTable extends Migration
         Schema::create('organizations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name',200);
+            $table->string('slug',50);
             $table->string('img',200);
             $table->string('adress',200);
             $table->string('phone',100);

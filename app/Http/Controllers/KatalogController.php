@@ -50,10 +50,13 @@ class KatalogController extends Controller
     }
 
 
-    public function landing($id)
+    public function showCard($slug)
     {
-        $organization = Organization::findOrFail($id);
-        return view('shops.show_landing')->with('organization', $organization);
+        $organization = Organization::where('slug','=', $slug)->firstOrFail();
+        $terms = Organization::find($organization->id)->taxonomies()->get();
+
+        return view('organization.card',compact('terms', 'organization'));
+
     }
 
     public function orgList()

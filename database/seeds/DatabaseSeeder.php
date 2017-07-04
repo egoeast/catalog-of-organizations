@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('organizations')->insert([
             'name' => 'Магазин Альтагамма',
+            'slug' => 'altagamma',
             'img'=>'/img/Salon-magazin-Berlin-v-Grodno-foto.jpg',
             'adress' => 'Республика Беларусь, г. Гродно, ул. Свердлова, 17',
             'phone' => '+375 (44) 500-40-14',
@@ -31,6 +32,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('organizations')->insert([
             'name' => 'ТЦ Гемма в Гродно',
+            'slug' => 'gemma',
             'img'=>'/img/Logotip-magazina-Gemma-v-Grodno.jpg',
             'adress' => 'Гродно, проспект Космонавтов, 2Г.',
             'phone' => '+375 (29) 509-58-35 − МТС',
@@ -43,6 +45,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('organizations')->insert([
             'name' => 'Торговый дом «Керамин-Запад»',
+            'slug' => 'keramin',
             'img'=>'/img/Logotip-magazina-Keramin.jpg',
             'adress' => 'Республика Беларусь 230025 г. Гродно, ул. Мостовая д. 39',
             'phone' => '+375 33 609 53 88',
