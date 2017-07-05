@@ -45,8 +45,8 @@ class KatalogController extends Controller
 
     public function edit($id)
     {
-        $organization = Shop::findOrFail($id);
-        return view('edit')->with('organization', $organization);
+        $organization = Organization::findOrFail($id);
+        return view('organization.edit')->with('organization', $organization);
     }
 
 
@@ -68,21 +68,16 @@ class KatalogController extends Controller
 
     public function updateOrg($id,Request $request)
     {
-        return $id;
+        $org = Organization::findOrFail($id);
+        $org->update($request->all());
+        return redirect('/org-list');
     }
 
     public function category($slug)
     {
-        $term = Term::where([
-           ['slug', '=', $slug],
-        ])->get()->first();
-
-        $category = Term::find($term->id)->taxonomy()->first();
-        //dd($category);
-        $shops = Taxonomy::find($category->id)->shops()->get();
-        //$shop = Shop::find(1);
-        //dd($shops);
-        return view('organizations.category',compact('term', 'category','shops'));
+        $category = Term::where('slug', '=', $slug)->firstOrFail();
+        $organizations = Taxonomy::find($category->id)->organizations()->get();
+        return view('organization.category',compact('category','organizations'));
     }
     public function test()
     {

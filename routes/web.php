@@ -25,7 +25,7 @@ Route::get('/edit/{id}','KatalogController@edit');
 
 Route::get('/card/{slug}','KatalogController@showCard');
 
-Route::get('/shop_list','KatalogController@shop_list');
+Route::get('/org-list','KatalogController@orgList');
 
 Route::patch('/org-update/{id}', 'KatalogController@updateOrg');
 

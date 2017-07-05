@@ -11,19 +11,19 @@
             <th>Phone</th>
             <th>Action</th>
         </tr>
-    @foreach($shops as $shop)
+    @foreach($organizations as $org)
         <tr>
             <td>
-                {{ $shop->name }}
+                {{ $org->name }}
             </td>
             <td>
-                {{ $shop->adress }}
+                {{ $org->adress }}
             </td>
             <td>
-                {{ $shop->phone }}
+                {{ $org->phone }}
             </td>
             <td>
-                <a href="{{ url('/edit/'.$shop->id) }}" class="btn btn-primary">Edit</a>
+                <a href="{{ url('/edit/'.$org->id) }}" class="btn btn-primary">Edit</a>
             </td>
         </tr>
     @endforeach

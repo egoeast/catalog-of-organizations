@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    {!! Form::model($shop, ['method'=>'PATCH','url'=>'/org-update/'.$shop->id]) !!}
+    {!! Form::model($organization, ['method'=>'PATCH','url'=>'/org-update/'.$organization->id]) !!}
     <div class="form-group">
         {!! Form::label('name','Name') !!}
         {!! Form::text('name', null, ['class' => 'form-control']) !!}
@@ -14,6 +14,11 @@
     <div class="form-group">
         {!! Form::label('phone','Phone') !!}
         {!! Form::text('phone', null, ['class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::label('slug','Slug') !!}
+        {!! Form::text('slug', null, ['class' => 'form-control']) !!}
     </div>
 
     <div class="form-group">
