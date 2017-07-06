@@ -27,6 +27,10 @@ Route::get('/card/{slug}','KatalogController@showCard');
 
 Route::get('/org-list','KatalogController@orgList');
 
+Route::get('/category-list','Admin\CategoryController@categoryList');
+
+Route::get('/category-edit/{id}','Admin\CategoryController@edit');
+
 Route::patch('/org-update/{id}', 'KatalogController@updateOrg');
 
 Auth::routes();
