@@ -22,7 +22,7 @@
 
 </head>
 <body id="app-layout">
-<a href="{{ url('setlang/ru') }}">ru</a><a href="{{ url('/setlang/en') }}">en</a>
+<a href="{{ url('/set-locale/ru') }}">ru</a><a href="{{ url('/set-locale/en') }}">en</a> {{App::setLocale('ru')}}{{App::getLocale()}}
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
         <div class="navbar-header">
@@ -44,7 +44,8 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li><a href="{{ url('/katalog') }}">Каталог</a></li>
+                <li><a href="{{ url('/org-list') }}">Организации</a></li>
+                <li><a href="{{ url('/category-list') }}">Категории</a></li>
 
                 @if(!Auth::guest())
                     <li><a href="{{ url('/users') }}">Edit account</a></li>
@@ -75,25 +76,16 @@
 <div class="container airSticky_stop-block">
     <div class="row">
         <div class="col-md-2">
-            @yield('left_sidebar')
-            <ul class="akkordeon">
-                <li>
-                    <p>Несколько активных пунктов</p>
-                    <div>Окраска, особенно в речных долинах, <a href="">обрывисто формирует</a> конус выноса, так как совершенно однозначно указывает на существование и рост в период оформления <b>палеогеновой поверхности выравнивания</b>. Присоединение органического вещества, основываясь большей частью на сейсмических данных, интенсивно поступает в меловой ийолит-уртит, что лишь подтверждает то, что породные отвалы располагаются на склонах.</div>
-                </li>
-                <li>
-                    <p>Габбро разогревает основной трог</p>
-                    <div>Габбро разогревает основной трог, за счет чего увеличивается мощность коры под многими хребтами. Эта разница, вероятно, помогает объяснить, почему верховое болото пододвигается под окско-донской кимберлит, но приводит к загрязнению окружающей среды.</div>
-                </li>
-                <li>
-                    <p>Калиево-натриевый полевой шпат</p>
-                    <div>Калиево-натриевый полевой шпат обогащает первичный лакколит, что обусловлено не только первичными неровностями эрозионно-тектонического рельефа поверхности кристаллических пород, но и проявлениями долее поздней блоковой тектоники</div>
-                </li>
-                <li>
-                    <p>Другим примером региональной компенсации</p>
-                    <div>Другим примером региональной компенсации может служить ламинарное движение анизотропно высвобождает блеск, что свидетельствует о проникновении днепровских льдов в бассейн Дона. Грабен анизотропно смещает фирновый алмаз, в то время как значения максимумов изменяются в широких пределах.</div>
-                </li>
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url('/org-list') }}">Организации</a></li>
+                <li><a href="{{ url('/category-list') }}">Категории</a></li>
+
+                @if(!Auth::guest())
+                    <li><a href="{{ url('/users') }}">Edit account</a></li>
+                @endif
             </ul>
+            @yield('left_sidebar')
+
         </div>
         <div class="col-md-8">
             @yield('content')
@@ -132,16 +124,7 @@
 
 
     <a href="#" class="scrollup">Наверх</a>
-<select class="area">
-    <option value="grodno">Гродненская</option>
-    <option value="brest">Брестская</option>
-</select>
 
-<select class="city">
-    <option>Гродненская</option>
-    <option>Брестская</option>
-</select>
-<button class="add-city">ADD</button>
 <!-- JavaScripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -160,47 +143,6 @@
         };
     });
     </script>
-<script>
-    $(document).ready(function(){
-        $('.area').click(function(){
-            //alert('sadasd');
-            if ($(this).val()=="grodno") {
-                $('.city').html("<option>Гродно</option>");
-                $('.city').html("<option>Лида</option>");
-                $('.city').html("<option>Волковыск</option>");
-            } else {
-                $('.city').html("<option>Брест</option>");
-            }
-        });
-
-    });
-
-</script>
-
-
-
-<script type="text/javascript">
-    $(document).ready(function(){	//страница загрузилась
-        $('ul.akkordeon li > p').click(function(){	//при клике на пункт меню:
-            $(this).toggleClass('active');		//делаем данный пункт активным/неактивным
-            $(this).next('div').slideToggle(200);	//раскрываем/скрываем следующий за "кликнутым" p блок div с эффектом slide
-        });
-    });
-</script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('ul.akkordeon1 li > p').click(function(){
-            if(!$(this).hasClass('active')){	//если "кликнутый" пункт неактивный:
-                $('ul.akkordeon1 li > p').removeClass('active').next('div').slideUp(); //делаем неактивными все пункты и скрываем все блоки
-                $(this).addClass('active');	//активируем "кликнутый" пункт
-                $(this).next('div').slideDown(200);	//раскрываем следующий за ним блок с описанием
-            } else {	//иначе:
-                $(this).removeClass('active').next('div').slideUp();	//скрываем данный пункт
-            }
-        });
-    });
-</script>
-
 
 
 <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>

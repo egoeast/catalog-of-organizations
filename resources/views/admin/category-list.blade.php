@@ -1,15 +1,18 @@
-@extends('layouts.app')
+@extends('admin.app')
 @section('left_sidebar')
     <b>Реклама</b>
 @stop
 @section('content')
+
+    <a href="{{ url('/category-create/') }}" class="btn btn-primary">@lang('category.create')</a>
+
     <table class="table table-hover">
-        <caption>Category table</caption>
+        <caption>@lang('category.categories')</caption>
         <tr>
-            <th>Term</th>
-            <th>Taxonomy</th>
-            <th>Parent</th>
-            <th>Action</th>
+            <th>@lang('category.term')</th>
+            <th>@lang('category.category')</th>
+            <th>@lang('category.parent')</th>
+            <th>@lang('category.action')</th>
         </tr>
         @foreach($categories as $cat)
             <tr>
@@ -23,7 +26,7 @@
                     {{ $cat->parent }}
                 </td>
                 <td>
-                    <a href="{{ url('/category-edit/'.$cat->id) }}" class="btn btn-primary">Edit</a>
+                    <a href="{{ url('/category-edit/'.$cat->id) }}" class="btn btn-primary">@lang('category.edit')</a>
                 </td>
             </tr>
         @endforeach

@@ -65,7 +65,7 @@ class KatalogController extends Controller
         return view('admin.org-list')->with('organizations', $organizations);
     }
 
-    public function updateOrg($id,Request $request)
+    public function updateOrg($id, Request $request)
     {
         $org = Organization::findOrFail($id);
         $org->update($request->all());

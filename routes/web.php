@@ -31,6 +31,10 @@ Route::get('/category-list','Admin\CategoryController@categoryList');
 
 Route::get('/category-edit/{id}','Admin\CategoryController@edit');
 
+Route::patch('/category-update/{id}', 'Admin\CategoryController@update');
+
+Route::get('/category-create', 'Admin\CategoryController@create');
+
 Route::patch('/org-update/{id}', 'KatalogController@updateOrg');
 
 Auth::routes();
@@ -38,3 +42,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/shop-update/{id}', 'KatalogController@update');
+
+Route::get('set-locale/{locale}', function ($locale) {
+
+    if (in_array($locale, \Config::get('app.locales'))) {   # Проверяем, что у пользователя выбран доступный язык
+        Session::put('locale', $locale);                    # И устанавливаем его в сессии под именем locale
+    }
+
+    return redirect()->back();                              # Редиректим его <s>взад</s> на ту же страницу
+
+});
