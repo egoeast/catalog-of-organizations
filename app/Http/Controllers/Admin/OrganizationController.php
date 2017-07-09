@@ -1,14 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Taxonomy;
-use App\Http\Controllers\Controller;
-use App\Shop;
+use App\Organization;
 use Illuminate\Http\Request;
-use Mail;
 
-class CategoryController extends Controller
+class OrganizationController extends Controller
 {
     public function __construct()
     {
@@ -16,10 +13,10 @@ class CategoryController extends Controller
         $this->middleware('locale');
     }
 
-    public function categoryList()
+    public function orgList()
     {
-        $categories = Taxonomy::all();
-        return view('admin.category-list')->with('categories', $categories);
+        $organizations = Organization::all();
+        return view('admin.org-list')->with('organizations', $organizations);
     }
     public function edit($id)
     {
@@ -43,12 +40,5 @@ class CategoryController extends Controller
     {
         Taxonomy::create($request->all());
         return redirect('/category-list');
-    }
-
-    public function delete($id)
-    {
-        $cat = Taxonomy::findOrFail($id);
-        $cat->delete();
-        return redirect()->back();
     }
 }

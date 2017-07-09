@@ -3,13 +3,14 @@
     <b>Реклама</b>
 @stop
 @section('content')
+    <a href="{{ url('/org-create/') }}" class="btn btn-primary">@lang('category.create')</a>
     <table class="table table-hover">
-        <caption>Shop table</caption>
+        <caption>@lang('organization.organizations')</caption>
         <tr>
-            <th>Name</th>
-            <th>Adress</th>
-            <th>Phone</th>
-            <th>Action</th>
+            <th>@lang('organization.name')</th>
+            <th>@lang('organization.adress')</th>
+            <th>@lang('organization.phone')</th>
+            <th>@lang('organization.action')</th>
         </tr>
     @foreach($organizations as $org)
         <tr>

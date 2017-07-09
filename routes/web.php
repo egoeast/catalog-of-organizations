@@ -35,6 +35,10 @@ Route::patch('/category-update/{id}', 'Admin\CategoryController@update');
 
 Route::get('/category-create', 'Admin\CategoryController@create');
 
+Route::post('/category-store', 'Admin\CategoryController@store');
+
+Route::get('/category-delete/{id}', 'Admin\CategoryController@delete');
+
 Route::patch('/org-update/{id}', 'KatalogController@updateOrg');
 
 Auth::routes();

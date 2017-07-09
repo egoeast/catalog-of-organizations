@@ -1,9 +1,14 @@
 @extends('admin.app')
 @section('content')
-    {!! Form::model($category, ['method'=>'PATCH','url'=>'/category-update/'.$category->id]) !!}
+    {!! Form::open(['url'=>'/category-store']) !!}
     <div class="form-group">
         {!! Form::label('term',trans('category.term')) !!}
         {!! Form::text('term', null, ['class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::label('slug',trans('category.slug')) !!}
+        {!! Form::text('slug', null, ['class' => 'form-control']) !!}
     </div>
 
     <div class="form-group">

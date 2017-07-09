@@ -27,6 +27,7 @@
                 </td>
                 <td>
                     <a href="{{ url('/category-edit/'.$cat->id) }}" class="btn btn-primary">@lang('category.edit')</a>
+                    <a href="{{ url('/category-delete/'.$cat->id) }}" class="btn btn-warning">@lang('category.delete')</a>
                 </td>
             </tr>
         @endforeach

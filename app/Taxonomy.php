@@ -12,7 +12,7 @@ class Taxonomy extends Model
         'slug',
         'taxonomy',
         'description',
-        'parrent',
+        'parent',
         'count',
     ];
     public function term()
