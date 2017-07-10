@@ -42,4 +42,11 @@ class OrganizationController extends Controller
         Organization::create($request->all());
         return redirect('/org-list');
     }
+
+    public function delete($id)
+    {
+        $org = Organization::findOrFail($id);
+        $org->delete();
+        return redirect()->back();
+    }
 }

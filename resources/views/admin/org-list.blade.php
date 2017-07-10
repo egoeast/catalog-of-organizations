@@ -1,6 +1,6 @@
 @extends('admin.app')
 @section('left_sidebar')
-    <b>Реклама</b>
+
 @stop
 @section('content')
     <a href="{{ url('/org-create/') }}" class="btn btn-primary">@lang('category.create')</a>
@@ -24,7 +24,7 @@
 
                     <a href="{{ url('/edit/'.$org->id) }}" class="btn btn-primary">@lang('organization.edit')</a>
 
-                    <a href="{{ url('/delete/'.$org->id) }}" class="btn btn-danger">@lang('organization.delete')</a>
+                    <a href="{{ url('/org-delete/'.$org->id) }}" class="btn btn-danger">@lang('organization.delete')</a>
 
             </td>
         </tr>

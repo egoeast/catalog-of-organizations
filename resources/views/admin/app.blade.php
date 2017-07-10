@@ -44,9 +44,9 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li><a href="{{ url('/org-list') }}">Организации</a></li>
-                <li><a href="{{ url('/category-list') }}">Категории</a></li>
-
+                <li><a href="{{ url('/org-list') }}">@lang('admin.organizations')</a></li>
+                <li><a href="{{ url('/category-list') }}">@lang('admin.categories')</a></li>
+                <li><a href="{{ url('/category-list') }}">@lang('admin.media')</a></li>
                 @if(!Auth::guest())
                     <li><a href="{{ url('/users') }}">Edit account</a></li>
                 @endif
@@ -77,8 +77,9 @@
     <div class="row">
         <div class="col-md-2">
             <ul class="nav navbar-nav">
-                <li><a href="{{ url('/org-list') }}">Организации</a></li>
-                <li><a href="{{ url('/category-list') }}">Категории</a></li>
+                <li><a href="{{ url('/org-list') }}">@lang('admin.organizations')</a></li>
+                <li><a href="{{ url('/category-list') }}">@lang('admin.categories')</a></li>
+                <li><a href="{{ url('/media') }}">@lang('admin.media')</a></li>
 
                 @if(!Auth::guest())
                     <li><a href="{{ url('/users') }}">Edit account</a></li>

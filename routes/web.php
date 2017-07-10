@@ -56,6 +56,10 @@ Route::get('/org-delete/{id}', 'Admin\OrganizationController@delete');
 
 //------------------------------------------------------------------------
 
+Route::get('/show-images', 'Admin\ImageController@show');
+
+//------------------------------------------------------------------------
+
 //Route::patch('/org-update/{id}', 'KatalogController@updateOrg');
 
 Auth::routes();

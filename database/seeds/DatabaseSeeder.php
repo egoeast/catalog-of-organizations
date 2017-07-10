@@ -159,5 +159,20 @@ class DatabaseSeeder extends Seeder
             'taxonomy_id'=>2,
             'term_order'=>0
         ]);
+
+        DB::table('images')->insert([
+            'url'=>'/img/Salon-magazin-Berlin-v-Grodno-foto.jpg',
+            'description'=>'',
+        ]);
+
+        DB::table('images')->insert([
+            'url'=>'/img/Logotip-magazina-Keramin.jpg',
+            'description'=>'',
+        ]);
+
+        DB::table('images')->insert([
+            'url'=>'/img/Logotip-magazina-Gemma-v-Grodno.jpg',
+            'description'=>'',
+        ]);
     }
 }
