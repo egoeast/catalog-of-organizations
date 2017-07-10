@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Organization;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class OrganizationController extends Controller
 {
@@ -20,25 +21,25 @@ class OrganizationController extends Controller
     }
     public function edit($id)
     {
-        $category = Taxonomy::findOrFail($id);
-        return view('admin.category-edit')->with('category', $category);
+        $org = Organization::findOrFail($id);
+        return view('admin.org-edit')->with('org', $org);
     }
 
     public function update($id, Request $request)
     {
-        $category = Taxonomy::findOrFail($id);
-        $category->update($request->all());
-        return redirect('/category-list');
+        $org = Organization::findOrFail($id);
+        $org->update($request->all());
+        return redirect('/org-list');
     }
 
     public function create()
     {
-        return view('admin.category-create');
+        return view('admin.org-create');
     }
 
     public function store(Request $request)
     {
-        Taxonomy::create($request->all());
-        return redirect('/category-list');
+        Organization::create($request->all());
+        return redirect('/org-list');
     }
 }

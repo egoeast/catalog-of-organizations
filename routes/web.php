@@ -19,14 +19,16 @@ Route::get('/test','KatalogController@test');
 
 Route::get('/katalog','KatalogController@show');
 
-Route::get('/category/{id}','KatalogController@category');
+//Route::get('/category/{id}','KatalogController@category');
 
 Route::get('/edit/{id}','KatalogController@edit');
 
 Route::get('/card/{slug}','KatalogController@showCard');
 
-Route::get('/org-list','KatalogController@orgList');
+//Route::get('/org-list','KatalogController@orgList');
 
+
+//------------------------------------------------------------------------
 Route::get('/category-list','Admin\CategoryController@categoryList');
 
 Route::get('/category-edit/{id}','Admin\CategoryController@edit');
@@ -38,14 +40,29 @@ Route::get('/category-create', 'Admin\CategoryController@create');
 Route::post('/category-store', 'Admin\CategoryController@store');
 
 Route::get('/category-delete/{id}', 'Admin\CategoryController@delete');
+//------------------------------------------------------------------------
 
-Route::patch('/org-update/{id}', 'KatalogController@updateOrg');
+Route::get('/org-list','Admin\OrganizationController@orgList');
+
+Route::get('/org-edit/{id}','Admin\OrganizationController@edit');
+
+Route::patch('/org-update/{id}', 'Admin\OrganizationController@update');
+
+Route::get('/org-create', 'Admin\OrganizationController@create');
+
+Route::post('/org-store', 'Admin\OrganizationController@store');
+
+Route::get('/org-delete/{id}', 'Admin\OrganizationController@delete');
+
+//------------------------------------------------------------------------
+
+//Route::patch('/org-update/{id}', 'KatalogController@updateOrg');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/shop-update/{id}', 'KatalogController@update');
+//Route::post('/shop-update/{id}', 'KatalogController@update');
 
 Route::get('set-locale/{locale}', function ($locale) {
 

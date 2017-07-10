@@ -9,7 +9,7 @@
         <tr>
             <th>@lang('organization.name')</th>
             <th>@lang('organization.adress')</th>
-            <th>@lang('organization.phone')</th>
+
             <th>@lang('organization.action')</th>
         </tr>
     @foreach($organizations as $org)
@@ -21,10 +21,11 @@
                 {{ $org->adress }}
             </td>
             <td>
-                {{ $org->phone }}
-            </td>
-            <td>
-                <a href="{{ url('/edit/'.$org->id) }}" class="btn btn-primary">Edit</a>
+
+                    <a href="{{ url('/edit/'.$org->id) }}" class="btn btn-primary">@lang('organization.edit')</a>
+
+                    <a href="{{ url('/delete/'.$org->id) }}" class="btn btn-danger">@lang('organization.delete')</a>
+
             </td>
         </tr>
     @endforeach
