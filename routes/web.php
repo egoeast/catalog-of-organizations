@@ -56,7 +56,7 @@ Route::get('/org-delete/{id}', 'Admin\OrganizationController@delete');
 
 //------------------------------------------------------------------------
 
-Route::get('/show-images', 'Admin\ImageController@show');
+Route::get('/media', 'Admin\MediaController@show');
 
 //------------------------------------------------------------------------
 
